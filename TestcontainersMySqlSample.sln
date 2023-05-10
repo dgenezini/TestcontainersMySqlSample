@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestcontainersSample", "TestcontainersSample\TestcontainersSample.csproj", "{8372B09C-A0CB-4D54-94EF-84ED0BA38142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestcontainersMySqlSample", "TestcontainersMySqlSample\TestcontainersMySqlSample.csproj", "{8372B09C-A0CB-4D54-94EF-84ED0BA38142}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestcontainersSample.IntegrationTests", "TestcontainersSample.IntegrationTests\TestcontainersSample.IntegrationTests.csproj", "{97ABF076-C824-496D-A031-8EF990AC435B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestcontainersMySqlSample.IntegrationTests", "TestcontainersMySqlSample.IntegrationTests\TestcontainersMySqlSample.IntegrationTests.csproj", "{97ABF076-C824-496D-A031-8EF990AC435B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

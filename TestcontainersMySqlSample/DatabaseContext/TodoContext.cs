@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace TestcontainersSample.DatabaseContext;
+namespace TestcontainersMySqlSample.DatabaseContext;
 
 public class TodoContext : DbContext
 {

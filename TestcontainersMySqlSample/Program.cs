@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TestcontainersSample.DatabaseContext;
+using TestcontainersMySqlSample.DatabaseContext;
 
-namespace TestcontainersSample;
+namespace TestcontainersMySqlSample;
 
 public class Program
 {

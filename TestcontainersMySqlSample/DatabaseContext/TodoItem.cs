@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace TestcontainersSample.DatabaseContext;
+namespace TestcontainersMySqlSample.DatabaseContext;
 
 public class TodoItem
 {

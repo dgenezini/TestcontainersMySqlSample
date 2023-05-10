@@ -1,4 +1,4 @@
-namespace TestcontainersSample.IntegrationTests.TestFixtures;
+namespace TestcontainersMySqlSample.IntegrationTests.TestFixtures;
 
 [CollectionDefinition("MySqlTestcontainer Collection")]
 public class MySqlTestcontainerCollection: ICollectionFixture<MySqlTestcontainerFixture>

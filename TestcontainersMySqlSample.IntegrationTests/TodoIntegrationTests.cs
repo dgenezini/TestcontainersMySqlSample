@@ -1,28 +1,28 @@
 using AutoFixture;
-using DotNet.Testcontainers.Containers;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
-using TestcontainersSample.DatabaseContext;
-using TestcontainersSample.IntegrationTests.TestFixtures;
+using Testcontainers.MySql;
+using TestcontainersMySqlSample.DatabaseContext;
+using TestcontainersMySqlSample.IntegrationTests.TestFixtures;
 
-namespace TestcontainersSample.IntegrationTests;
+namespace TestcontainersMySqlSample.IntegrationTests;
 
 [Collection("MySqlTestcontainer Collection")]
 public class TodoIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
 {
     private readonly WebApplicationFactory<Program> _factory;
-    private readonly MySqlTestcontainer _mySqlTestcontainer;
+    private readonly MySqlContainer _mySqlContainer;
     private readonly TodoContext _todoContext;
 
     public TodoIntegrationTests(WebApplicationFactory<Program> factory, 
         MySqlTestcontainerFixture mySqlTestcontainerFixture)
     {
         _factory = factory;
-        _mySqlTestcontainer = mySqlTestcontainerFixture.MySqlTestcontainer;
+        _mySqlContainer = mySqlTestcontainerFixture.MySqlContainer;
         _todoContext = mySqlTestcontainerFixture.TodoContext;
     }
 
@@ -40,7 +40,7 @@ public class TodoIntegrationTests : IClassFixture<WebApplicationFactory<Program>
         var HttpClient = _factory
             .WithWebHostBuilder(builder =>
             {
-                builder.UseSetting("MySqlConnectionString", _mySqlTestcontainer.ConnectionString);
+                builder.UseSetting("MySqlConnectionString", _mySqlContainer.GetConnectionString());
             })
             .CreateClient();
 
@@ -63,7 +63,7 @@ public class TodoIntegrationTests : IClassFixture<WebApplicationFactory<Program>
         var HttpClient = _factory
             .WithWebHostBuilder(builder =>
             {
-                builder.UseSetting("MySqlConnectionString", _mySqlTestcontainer.ConnectionString);
+                builder.UseSetting("MySqlConnectionString", _mySqlContainer.GetConnectionString());
             })
             .CreateClient();
 
@@ -86,7 +86,7 @@ public class TodoIntegrationTests : IClassFixture<WebApplicationFactory<Program>
         var HttpClient = _factory
             .WithWebHostBuilder(builder =>
             {
-                builder.UseSetting("MySqlConnectionString", _mySqlTestcontainer.ConnectionString);
+                builder.UseSetting("MySqlConnectionString", _mySqlContainer.GetConnectionString());
             })
             .CreateClient();
 
